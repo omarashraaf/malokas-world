@@ -598,7 +598,7 @@ function PromiseScene({ onBack }) {
           Not because of one moment, or one photo, or one perfect day. I love you because
           being close to you feels like finding a place my heart recognizes.
         </p>
-        <p className="signature">Made only for you.</p>
+        <p className="signature">Made with love by Omar.</p>
       </div>
     </SceneShell>
   )
