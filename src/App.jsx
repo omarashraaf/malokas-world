@@ -443,6 +443,7 @@ function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVide
                 <video
                   className="memory-photo memory-video"
                   src={memory.video}
+                  poster="/assets/videos/our-jokes-and-laughing-poster.jpg"
                   controls
                   playsInline
                   muted={videoMuted}
