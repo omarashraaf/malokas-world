@@ -1,0 +1,31 @@
+:root {
+  --pixel-font: 'Press Start 2P', 'Courier New', monospace;
+  --body-font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  font-family: var(--body-font);
+  color: #fff7ff;
+  background: #110d24;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100svh;
+  margin: 0;
+}
+
+#root {
+  min-height: 100svh;
+}
