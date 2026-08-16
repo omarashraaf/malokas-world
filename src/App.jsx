@@ -89,7 +89,7 @@ const memories = [
     image: '/assets/photos/memory-mirror.jpeg',
   },
   {
-    title: 'The jokes and the laughing',
+    title: 'The Sound of Us',
     caption:
       'The jokes, the laughing, and the way we can turn an ordinary moment into something I want to replay again and again.',
     video: '/assets/videos/our-jokes-and-laughing.mp4',
