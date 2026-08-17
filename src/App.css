@@ -119,6 +119,13 @@
   bottom: 22px;
 }
 
+.scene-promise .scene-content {
+  align-items: start;
+  overflow-y: auto;
+  padding-top: 78px;
+  padding-bottom: 74px;
+}
+
 .scene-song .scene-content {
   position: absolute;
   inset: 0 0 82px;
@@ -1034,7 +1041,7 @@ p {
 }
 
 .promise-scene {
-  position: static;
+  position: relative;
   display: grid;
   gap: 18px;
   justify-items: center;
@@ -1118,17 +1125,14 @@ p {
 }
 
 .signature {
-  position: absolute;
-  bottom: max(70px, calc(env(safe-area-inset-bottom) + 58px));
-  left: 50%;
+  position: static;
   display: flex;
   align-items: center;
   gap: 9px;
   width: max-content;
   max-width: calc(100% - 40px);
-  margin: 0;
+  margin: 4px auto 0;
   padding: 9px 14px;
-  transform: translateX(-50%);
   background: rgba(103, 49, 103, 0.9);
   border: 3px solid #ffd8ed;
   box-shadow:
@@ -1576,7 +1580,6 @@ p {
   }
 
   .signature {
-    bottom: max(60px, calc(env(safe-area-inset-bottom) + 52px));
     padding: 8px 10px;
     font-size: 7px;
   }
