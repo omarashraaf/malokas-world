@@ -14,7 +14,7 @@ const scenes = [
   'memories',
   'promise',
 ]
-const passcode = '18626'
+const passcode = '7826'
 
 const pageNames = {
   letter: 'Intro',
@@ -199,6 +199,8 @@ function PasswordScene({ onBack, onUnlock }) {
   const [status, setStatus] = useState('Guess the password')
 
   function pressKey(key) {
+    if (status === 'Unlocked') return
+
     const nextValue = key === 'clear' ? '' : `${input}${key}`.slice(0, passcode.length)
     setInput(nextValue)
     if (nextValue.length === passcode.length) {
@@ -233,7 +235,7 @@ function PasswordScene({ onBack, onUnlock }) {
             </button>
           ))}
         </div>
-        <p className="hint">Hint: our first talk, not the 14/6 math</p>
+        <p className="hint">Hint: our first confession</p>
       </div>
     </SceneShell>
   )

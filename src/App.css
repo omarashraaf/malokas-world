@@ -77,7 +77,7 @@
 
 .scene-password .scene-content {
   padding-top: 72px;
-  padding-bottom: 118px;
+  padding-bottom: 72px;
 }
 
 .scene-password .scene-nav {
@@ -386,9 +386,13 @@ p {
 }
 
 .password-box h2 {
+  height: 44px;
+  display: grid;
+  place-items: center;
   color: #9d5797;
   text-shadow: 2px 2px 0 #fff8ff;
   font-size: 18px;
+  line-height: 1.2;
 }
 
 .pass-display {
