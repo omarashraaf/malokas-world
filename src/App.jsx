@@ -14,7 +14,6 @@ const scenes = [
   'memories',
   'promise',
 ]
-const songSceneIndex = scenes.indexOf('song')
 const passcode = '7826'
 
 const pageNames = {
@@ -120,22 +119,6 @@ function formatTime(seconds) {
 
 function PixelHeart({ className = '' }) {
   return <span className={`pixel-heart ${className}`} aria-hidden="true" />
-}
-
-function MusicControl({ playing, onToggle }) {
-  return (
-    <button
-      type="button"
-      className="global-music-control"
-      onClick={onToggle}
-      aria-label={playing ? 'Pause song' : 'Play song'}
-      title={playing ? 'Pause song' : 'Play song'}
-    >
-      <span className="music-speaker-icon" aria-hidden="true">
-        {playing ? '🔊' : '🔇'}
-      </span>
-    </button>
-  )
 }
 
 function CoupleSprites() {
@@ -677,7 +660,6 @@ export default function App() {
   const [duration, setDuration] = useState(0)
 
   const scene = scenes[sceneIndex]
-  const showMusicControl = sceneIndex > songSceneIndex
   const goNext = () => setSceneIndex((index) => Math.min(index + 1, scenes.length - 1))
   const goBack = sceneIndex > 0 ? () => setSceneIndex((index) => Math.max(index - 1, 0)) : undefined
 
@@ -822,9 +804,6 @@ export default function App() {
         onEnded={() => setPlaying(false)}
       />
       {activeScene}
-      {showMusicControl ? (
-        <MusicControl playing={playing} onToggle={togglePlayback} />
-      ) : null}
     </>
   )
 }
