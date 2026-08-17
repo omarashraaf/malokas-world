@@ -803,13 +803,15 @@ export default function App() {
       {showMusicControl ? (
         <button
           type="button"
-          className={`global-music-control${playing ? ' is-playing' : ''}`}
+          className="global-music-control"
           onClick={togglePlayback}
           aria-label={playing ? 'Pause song' : 'Play song'}
           title={playing ? 'Pause song' : 'Play song'}
         >
-          <span className="music-note" aria-hidden="true">♪</span>
-          <span className="music-action" aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span>
+          <span
+            className={`music-control-icon ${playing ? 'is-pause' : 'is-play'}`}
+            aria-hidden="true"
+          />
         </button>
       ) : null}
     </>
