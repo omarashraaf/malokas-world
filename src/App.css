@@ -1090,6 +1090,7 @@ p {
 .promise-message::after {
   right: -7px;
   bottom: -7px;
+  transform: rotate(180deg);
 }
 
 .promise-message-label {
