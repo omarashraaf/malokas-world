@@ -606,6 +606,11 @@ function PromiseScene({ onBack }) {
         <CoupleSprites />
         <h2>I love you, Malak</h2>
         <div className="promise-message">
+          <div className="promise-message-label">
+            <PixelHeart />
+            <span>A message from my heart</span>
+            <PixelHeart />
+          </div>
           <p>
             Five years ago, when we first talked, I loved you even then. Life and things
             beyond our control took us in different directions, but what I felt for you
@@ -622,7 +627,11 @@ function PromiseScene({ onBack }) {
             recognized.
           </p>
         </div>
-        <p className="signature">Made with love by Omar.</p>
+        <p className="signature">
+          <span aria-hidden="true">♥</span>
+          Made with love by Omar.
+          <span aria-hidden="true">♥</span>
+        </p>
       </div>
     </SceneShell>
   )

@@ -1034,6 +1034,7 @@ p {
 }
 
 .promise-scene {
+  position: static;
   display: grid;
   gap: 18px;
   justify-items: center;
@@ -1042,15 +1043,71 @@ p {
 }
 
 .promise-message {
+  position: relative;
   width: min(100%, 520px);
-  padding: 18px 20px;
-  background: rgba(255, 243, 252, 0.96);
-  border: 4px solid #fff8ff;
+  padding: 28px 22px 20px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.72) 0 10px, transparent 10px),
+    linear-gradient(315deg, rgba(255, 202, 232, 0.58) 0 10px, transparent 10px),
+    rgba(255, 243, 252, 0.97);
+  border: 4px solid #8b4778;
+  outline: 4px solid #fff8ff;
+  outline-offset: -8px;
   box-shadow:
-    0 0 0 3px #e688bd,
-    7px 7px 0 rgba(82, 33, 91, 0.72);
+    0 0 0 4px #e688bd,
+    9px 9px 0 rgba(82, 33, 91, 0.72),
+    14px 14px 0 rgba(255, 183, 218, 0.32);
   color: #6f3867;
   text-shadow: none;
+}
+
+.promise-message::before,
+.promise-message::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff7eb6;
+  box-shadow:
+    10px 0 #ff7eb6,
+    0 10px #ff7eb6,
+    20px 10px #ff7eb6,
+    10px 20px #ff7eb6;
+}
+
+.promise-message::before {
+  top: -7px;
+  left: -7px;
+}
+
+.promise-message::after {
+  right: 13px;
+  bottom: 13px;
+  transform: rotate(180deg);
+}
+
+.promise-message-label {
+  position: absolute;
+  top: -17px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 12px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: #7e386f;
+  border: 3px solid #ffd8ed;
+  box-shadow: 4px 4px 0 rgba(82, 33, 91, 0.72);
+  color: #fff8ff;
+  font-family: var(--pixel-font);
+  font-size: 7px;
+  line-height: 1;
+}
+
+.promise-message-label .pixel-heart {
+  transform: scale(0.55);
+  transform-origin: center;
 }
 
 .promise-scene .promise-message p {
@@ -1061,9 +1118,30 @@ p {
 }
 
 .signature {
+  position: absolute;
+  bottom: max(70px, calc(env(safe-area-inset-bottom) + 58px));
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: max-content;
+  max-width: calc(100% - 40px);
+  margin: 0;
+  padding: 9px 14px;
+  transform: translateX(-50%);
+  background: rgba(103, 49, 103, 0.9);
+  border: 3px solid #ffd8ed;
+  box-shadow:
+    4px 4px 0 #542459,
+    inset 0 0 0 2px rgba(255, 255, 255, 0.18);
   font-family: var(--pixel-font);
-  font-size: 11px;
+  font-size: 9px;
   color: #ffe2f4;
+  text-shadow: 2px 2px 0 #542459;
+}
+
+.signature span {
+  color: #ff9fc9;
 }
 
 .stars span {
@@ -1483,12 +1561,24 @@ p {
   }
 
   .promise-message {
-    padding: 14px;
+    padding: 24px 14px 14px;
+  }
+
+  .promise-message-label {
+    gap: 5px;
+    padding: 6px 8px;
+    font-size: 6px;
   }
 
   .promise-scene .promise-message p {
     font-size: 7px;
     line-height: 1.7;
+  }
+
+  .signature {
+    bottom: max(60px, calc(env(safe-area-inset-bottom) + 52px));
+    padding: 8px 10px;
+    font-size: 7px;
   }
 }
 
