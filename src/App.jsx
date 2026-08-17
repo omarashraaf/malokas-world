@@ -83,9 +83,9 @@ const memories = [
     position: 'center 34%',
   },
   {
-    title: 'The mirror memory',
+    title: 'Right Where I Belong',
     caption:
-      'A simple picture, but I keep seeing two people who somehow look right standing next to each other.',
+      'I love this picture because every time I look at it, I remember how happy I am to have you standing beside me.',
     image: '/assets/photos/memory-mirror.jpeg',
   },
   {
