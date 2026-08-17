@@ -1041,6 +1041,25 @@ p {
   text-shadow: 2px 2px 0 rgba(82, 33, 91, 0.86);
 }
 
+.promise-message {
+  width: min(100%, 520px);
+  padding: 18px 20px;
+  background: rgba(255, 243, 252, 0.96);
+  border: 4px solid #fff8ff;
+  box-shadow:
+    0 0 0 3px #e688bd,
+    7px 7px 0 rgba(82, 33, 91, 0.72);
+  color: #6f3867;
+  text-shadow: none;
+}
+
+.promise-scene .promise-message p {
+  max-width: none;
+  font-family: var(--pixel-font);
+  font-size: 8px;
+  line-height: 1.8;
+}
+
 .signature {
   font-family: var(--pixel-font);
   font-size: 11px;
@@ -1461,6 +1480,15 @@ p {
   .promise-scene p {
     font-size: 13px;
     line-height: 1.4;
+  }
+
+  .promise-message {
+    padding: 14px;
+  }
+
+  .promise-scene .promise-message p {
+    font-size: 7px;
+    line-height: 1.7;
   }
 }
 

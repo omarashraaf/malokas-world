@@ -605,21 +605,23 @@ function PromiseScene({ onBack }) {
       <div className="promise-scene pop-in">
         <CoupleSprites />
         <h2>I love you, Malak</h2>
-        <p>
-          Five years ago, when we first talked, I loved you even then. Life and things
-          beyond our control took us in different directions, but what I felt for you
-          always stayed somewhere inside me.
-        </p>
-        <p>
-          Now, after all this time, I have fallen in love with you again. And if life
-          brings us back to each other a hundred times, I know my heart will choose you
-          every single time.
-        </p>
-        <p>
-          I love you not because of one moment, one photo, or one perfect day. I love you
-          because being close to you feels like finding a place my heart has always
-          recognized.
-        </p>
+        <div className="promise-message">
+          <p>
+            Five years ago, when we first talked, I loved you even then. Life and things
+            beyond our control took us in different directions, but what I felt for you
+            always stayed somewhere inside me.
+          </p>
+          <p>
+            Now, after all this time, I have fallen in love with you again. And if life
+            brings us back to each other a hundred times, I know my heart will choose you
+            every single time.
+          </p>
+          <p>
+            I love you not because of one moment, one photo, or one perfect day. I love you
+            because being close to you feels like finding a place my heart has always
+            recognized.
+          </p>
+        </div>
         <p className="signature">Made with love by Omar.</p>
       </div>
     </SceneShell>
