@@ -448,7 +448,7 @@ function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVide
               className="polaroid"
               key={memory.title}
               style={{
-                '--tilt': albumScatter[index].tilt,
+                '--tilt': memory.video ? '0deg' : albumScatter[index].tilt,
                 '--shift': albumScatter[index].shift,
               }}
             >
