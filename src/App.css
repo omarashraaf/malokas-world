@@ -248,21 +248,10 @@
   outline-offset: 3px;
 }
 
-.music-heart-icon {
+.music-speaker-icon {
   display: block;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1;
-}
-
-.music-heart-icon.is-whole {
-  color: #e8569c;
-  text-shadow:
-    2px 2px 0 #9f5189,
-    -1px -1px 0 #fff8ff;
-}
-
-.music-heart-icon.is-broken {
-  font-size: 21px;
 }
 
 button {
@@ -1687,11 +1676,6 @@ p {
     display: block;
   }
 
-  .album-music-control {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
