@@ -1686,6 +1686,12 @@ p {
   .album-title span {
     display: block;
   }
+
+  .album-music-control {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

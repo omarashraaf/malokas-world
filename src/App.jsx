@@ -122,6 +122,25 @@ function PixelHeart({ className = '' }) {
   return <span className={`pixel-heart ${className}`} aria-hidden="true" />
 }
 
+function MusicControl({ playing, onToggle, className = '' }) {
+  return (
+    <button
+      type="button"
+      className={`global-music-control ${className}`.trim()}
+      onClick={onToggle}
+      aria-label={playing ? 'Pause song' : 'Play song'}
+      title={playing ? 'Pause song' : 'Play song'}
+    >
+      <span
+        className={`music-heart-icon ${playing ? 'is-whole' : 'is-broken'}`}
+        aria-hidden="true"
+      >
+        {playing ? '♥' : '💔'}
+      </span>
+    </button>
+  )
+}
+
 function CoupleSprites() {
   return (
     <div className="couple" aria-hidden="true">
@@ -423,7 +442,15 @@ function GiftsScene({ onBack, onNext }) {
   )
 }
 
-function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVideoStop }) {
+function MemoriesScene({
+  onBack,
+  onNext,
+  onVideoPlay,
+  onVideoAudioChange,
+  onVideoStop,
+  playing,
+  onTogglePlayback,
+}) {
   const [videoMuted, setVideoMuted] = useState(true)
   const goBackFromAlbum = () => {
     onVideoStop()
@@ -442,6 +469,11 @@ function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVide
       nextLabel="Final"
     >
       <div className="memories-scene">
+        <MusicControl
+          playing={playing}
+          onToggle={onTogglePlayback}
+          className="album-music-control"
+        />
         <h2 className="album-title">
           <span>The</span>{' '}
           <span>Beginning</span>{' '}
@@ -777,6 +809,8 @@ export default function App() {
           onVideoPlay={handleVideoPlay}
           onVideoAudioChange={handleVideoAudioChange}
           onVideoStop={restoreSongAfterVideo}
+          playing={playing}
+          onTogglePlayback={togglePlayback}
         />
       )
       break
@@ -800,21 +834,8 @@ export default function App() {
         onEnded={() => setPlaying(false)}
       />
       {activeScene}
-      {showMusicControl ? (
-        <button
-          type="button"
-          className="global-music-control"
-          onClick={togglePlayback}
-          aria-label={playing ? 'Pause song' : 'Play song'}
-          title={playing ? 'Pause song' : 'Play song'}
-        >
-          <span
-            className={`music-heart-icon ${playing ? 'is-whole' : 'is-broken'}`}
-            aria-hidden="true"
-          >
-            {playing ? '♥' : '💔'}
-          </span>
-        </button>
+      {showMusicControl && scene !== 'memories' ? (
+        <MusicControl playing={playing} onToggle={togglePlayback} />
       ) : null}
     </>
   )
