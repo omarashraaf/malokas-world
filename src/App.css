@@ -248,42 +248,21 @@
   outline-offset: 3px;
 }
 
-.music-control-icon {
-  position: relative;
-  width: 20px;
-  height: 20px;
+.music-heart-icon {
   display: block;
+  font-size: 24px;
+  line-height: 1;
 }
 
-.music-control-icon.is-pause::before,
-.music-control-icon.is-pause::after {
-  content: '';
-  position: absolute;
-  top: 1px;
-  width: 6px;
-  height: 18px;
-  background: #a84280;
-  box-shadow: inset 2px 0 rgba(255, 255, 255, 0.28);
+.music-heart-icon.is-whole {
+  color: #e8569c;
+  text-shadow:
+    2px 2px 0 #9f5189,
+    -1px -1px 0 #fff8ff;
 }
 
-.music-control-icon.is-pause::before {
-  left: 2px;
-}
-
-.music-control-icon.is-pause::after {
-  right: 2px;
-}
-
-.music-control-icon.is-play::before {
-  content: '';
-  position: absolute;
-  top: 1px;
-  left: 4px;
-  width: 0;
-  height: 0;
-  border-top: 9px solid transparent;
-  border-bottom: 9px solid transparent;
-  border-left: 14px solid #a84280;
+.music-heart-icon.is-broken {
+  font-size: 21px;
 }
 
 button {

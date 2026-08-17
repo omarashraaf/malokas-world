@@ -809,9 +809,11 @@ export default function App() {
           title={playing ? 'Pause song' : 'Play song'}
         >
           <span
-            className={`music-control-icon ${playing ? 'is-pause' : 'is-play'}`}
+            className={`music-heart-icon ${playing ? 'is-whole' : 'is-broken'}`}
             aria-hidden="true"
-          />
+          >
+            {playing ? '♥' : '💔'}
+          </span>
         </button>
       ) : null}
     </>
