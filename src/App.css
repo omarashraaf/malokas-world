@@ -1088,9 +1088,8 @@ p {
 }
 
 .promise-message::after {
-  right: 13px;
-  bottom: 13px;
-  transform: rotate(180deg);
+  right: -7px;
+  bottom: -7px;
 }
 
 .promise-message-label {
