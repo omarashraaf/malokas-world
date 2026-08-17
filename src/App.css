@@ -805,7 +805,7 @@ p {
 }
 
 .polaroid {
-  width: min(100%, 340px);
+  width: min(calc(100% - 20px), 340px);
   margin-inline: auto;
   display: grid;
   gap: 10px;
@@ -815,7 +815,7 @@ p {
   color: #6c3766;
   border: 3px solid #f2b6d8;
   box-shadow: 5px 5px 0 rgba(112, 58, 107, 0.5);
-  transform: rotate(var(--tilt));
+  transform: translateX(var(--shift)) rotate(var(--tilt));
 }
 
 .memory-photo {

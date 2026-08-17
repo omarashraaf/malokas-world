@@ -102,6 +102,14 @@ const memories = [
   },
 ]
 
+const albumScatter = [
+  { tilt: '-4deg', shift: '-7px' },
+  { tilt: '3deg', shift: '8px' },
+  { tilt: '-2deg', shift: '-5px' },
+  { tilt: '4deg', shift: '6px' },
+  { tilt: '-5deg', shift: '-8px' },
+]
+
 function formatTime(seconds) {
   if (!Number.isFinite(seconds)) return '0:00'
   const minutes = Math.floor(seconds / 60)
@@ -437,7 +445,10 @@ function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVide
             <article
               className="polaroid"
               key={memory.title}
-              style={{ '--tilt': memory.video ? '0deg' : `${((index % 3) - 1) * 5}deg` }}
+              style={{
+                '--tilt': albumScatter[index].tilt,
+                '--shift': albumScatter[index].shift,
+              }}
             >
               {memory.video ? (
                 <video
