@@ -14,6 +14,7 @@ const scenes = [
   'memories',
   'promise',
 ]
+const songSceneIndex = scenes.indexOf('song')
 const passcode = '7826'
 
 const pageNames = {
@@ -649,6 +650,7 @@ export default function App() {
   const [duration, setDuration] = useState(0)
 
   const scene = scenes[sceneIndex]
+  const showMusicControl = sceneIndex > songSceneIndex
   const goNext = () => setSceneIndex((index) => Math.min(index + 1, scenes.length - 1))
   const goBack = sceneIndex > 0 ? () => setSceneIndex((index) => Math.max(index - 1, 0)) : undefined
 
@@ -788,9 +790,23 @@ export default function App() {
         preload="metadata"
         onLoadedMetadata={(event) => setDuration(event.currentTarget.duration)}
         onTimeUpdate={(event) => setCurrentTime(event.currentTarget.currentTime)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
         onEnded={() => setPlaying(false)}
       />
       {activeScene}
+      {showMusicControl ? (
+        <button
+          type="button"
+          className={`global-music-control${playing ? ' is-playing' : ''}`}
+          onClick={togglePlayback}
+          aria-label={playing ? 'Pause song' : 'Play song'}
+          title={playing ? 'Pause song' : 'Play song'}
+        >
+          <span className="music-note" aria-hidden="true">♪</span>
+          <span className="music-action" aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span>
+        </button>
+      ) : null}
     </>
   )
 }
