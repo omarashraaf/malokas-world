@@ -442,7 +442,12 @@ function MemoriesScene({ onBack, onNext, onVideoPlay, onVideoAudioChange, onVide
       nextLabel="Final"
     >
       <div className="memories-scene">
-        <h2>The Beginning of Our Album</h2>
+        <h2 className="album-title">
+          <span>The</span>{' '}
+          <span>Beginning</span>{' '}
+          <span>of Our</span>{' '}
+          <span>Album</span>
+        </h2>
         <div className="photo-stack">
           {memories.map((memory, index) => (
             <article

@@ -1695,8 +1695,8 @@ p {
 }
 
 @media (max-width: 600px) {
-  .scene-memories .scene-content {
-    padding-top: 126px;
+  .album-title span {
+    display: block;
   }
 }
 
